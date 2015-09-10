@@ -29,7 +29,21 @@
 
   <br class="clear" />
 
-  <%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="col-xs-6">
+        <%= link_to "This isn't enough, I need more", "#", 
+          :class => 'next_quote' %>
+      </div>
+      <div class="col-xs-6 footer-blurb">
+        Proudly hacked in Fort Collins, CO by <a href="http://acodeinprogress.rocks">Sharon</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
