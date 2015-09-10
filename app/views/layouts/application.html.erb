@@ -9,20 +9,22 @@
 <body>
   <header>
     <div class="col-xs-3">
-      <div class="circle">
-        <br />
-        You know
-        <br />
-        you need
-        <br />
-        to code
-      </div>
+      <%= link_to root_path, :class => 'logo' do %>
+        <div class="circle">
+          <br />
+          You know
+          <br />
+          you need
+          <br />
+          to code
+        </div>
+      <% end %>
     </div>
     <div class="col-xs-4 slogan">
       Splurting out unsolicited advice about entrepreneurship since 2014
     </div>
     <div class="col-xs-5 links">
-      <%= link_to 'Contribute', '#' %>
+      <%= link_to 'Contribute', new_quote_path %>
       <%= link_to 'About', '#' %>
   </header>
   <hr />
@@ -36,8 +38,8 @@
   <footer class="footer">
     <div class="container">
       <div class="col-xs-6">
-        <%= link_to "This isn't enough, I need more", "#", 
-          :class => 'next_quote' %>
+      <%= link_to "This isn't enough, I need more", root_path, 
+        :class => 'next_quote' %> 
       </div>
       <div class="col-xs-6 footer-blurb">
         Proudly hacked in Fort Collins, CO by <a href="http://acodeinprogress.rocks">Sharon</a>
