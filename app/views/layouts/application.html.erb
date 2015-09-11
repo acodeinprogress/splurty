@@ -20,12 +20,13 @@
         </div>
       <% end %>
     </div>
-    <div class="col-xs-4 slogan">
+    <div class="col-sm-4 hidden-xs slogan">
       Splurting out unsolicited advice about entrepreneurship since 2014
     </div>
-    <div class="col-xs-5 links">
+    <div class="col-xs-8 col-xs-offset-1 col-sm-offset-0 col-sm-5 links">
       <!-- Button trigger modal -->
       <%= link_to 'Contribute', '#', :data => {:toggle => 'modal', :target => '#myModal'} %>
+      &nbsp;&nbsp;&nbsp;
       <%= link_to 'About', about_path %>
   </header>
 
@@ -41,8 +42,11 @@
           <h1>Enter Your Quote Details</h1>
 
           <%= simple_form_for Quote.new do |f| %>
-            <%= f.input :saying %>
-          <%= f.input :author %>
+            <%= f.input :saying, 
+              :label => "What is the saying you want to add?", :placeholder => "If you don't see a clear path for what you want, sometimes you have to make it yourself." %>
+            <br />
+            <%= f.input :author, :label => "Who is the author of the quote?", 
+              :placeholder => "Mindy Kaling" %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -68,12 +72,12 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-sm-6">
       <%= link_to "This isn't enough, I need more", root_path, 
         :class => 'next_quote' %> 
       </div>
-      <div class="col-xs-6 footer-blurb">
-        Proudly hacked in Fort Collins, CO by <a href="http://acodeinprogress.rocks">Sharon</a>
+      <div class="col-xs-12 col-sm-6 footer-blurb">
+        Proudly hacked in Fort Collins, CO by <a href="http://acodeinprogress.rocks">ACodeInProgress</a>
       </div>
     </div>
   </footer>
