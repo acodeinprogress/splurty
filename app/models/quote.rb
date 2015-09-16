@@ -3,4 +3,12 @@ class Quote < ActiveRecord::Base
     :maximum => 140, :minimum => 3 }
   validates :author, :presence => true, :length => { 
     :maximum => 50, :minimum => 3 }
+
+  def unique_tag
+    abbr = []
+    abbr = self.author.split(" ").collect do |name|
+      name[0]
+    end
+    abbr.join + '#' + self.id.to_s
+  end
 end
