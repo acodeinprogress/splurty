@@ -3,7 +3,7 @@ require 'test_helper'
 class QuoteTest < ActiveSupport::TestCase
 
   test "unique_tag" do
-    quote = Quote.create(:author => "Irving Berlin", :saying => "Life is 10 percent what you make it, and 90 percent how you take it.")
+    quote = FactoryGirl.create(:quote, :author => 'Irving Berlin')
     expected = 'IB#' + quote.id.to_s
     actual = quote.unique_tag
     assert_equal expected, actual
